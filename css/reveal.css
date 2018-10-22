@@ -32,6 +32,33 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
 .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
   display: block; }
 
+#col1 {
+  float: right ;
+  width: 50% ;
+}
+#col2 {
+  float: right;
+  width: 50%;
+}
+
+.white-box {
+  background: #fff;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 1em;
+  color: #000;
+}
+blockquote {
+  width: auto!important;
+  margin: 0!important;
+  padding: 0!important;
+  background: none!important;
+}
+img {
+  border: 0!important;
+  background: none!important;
+  margin: 0!important;
+}
 .gold {
   color: gold!important;
 }
@@ -48,27 +75,48 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
 .rise-300 {
   margin-top: -300px!important;
 }
+.fall-300 {
+  margin-top: 300px!important;
+}
 
-
+.right-100 {
+  margin-left: 100px!important;
+}
 .offset {
   padding: .2em 1em .3em 1em !important;
   background-color: #000;
   opacity: .5;
   -webkit-border-radius: 32px;
 }
+.center {
+  margin: auto;
+}
 
 .offset-dark {
   padding: .5em 1em .5em 1em !important;
-  background-color: #000;
-  opacity: .7;
+  background-color: #000!important;
+  opacity: .7!important;
   -webkit-border-radius: 32px;
 }
+
 .blackbar {
   padding: .2em 1em .3em 1em !important;
   background-color: #000;
   opacity: .9;
   -webkit-border-radius: 16px;
-  width: 50%;
+  margin-bottom: 1em!important;
+  font-size: 90%!important;
+}
+
+.blackbar_sm {
+  padding: .2em 1em .3em 1em !important;
+  background-color: #000;
+  opacity: .5;
+  -webkit-border-radius: 16px;
+  width: 30%;
+  font-size: 60% !important;
+  color: goldenrod;
+  margin-bottom: 1em;
 }
 
 .half {

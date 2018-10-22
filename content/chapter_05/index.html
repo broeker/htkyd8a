@@ -1,16 +1,75 @@
+<section data-background-image="includes/gears4.jpg">
+    <div class="containter">
+        <div id="col1">
+            <div style="padding: 0 1em;">
+          <blockquote>
+            "If this ploy makes the starter operate as it should, i.e., the engine gaily starts to turn over, then you either have a dirty solenoid or trouble with the ignition switch in the car."
+            <span class="gold">John Muir, p. 51</span>
+          </blockquote>
+            </div>
+        </div>
+        <div id="col2">
+            <h3 class="gold">Chapter V</h3>
+            Engine Stops or Won't Start
+            <p>
+            <img src="includes/starter.jpg" />
+            </p>
+        </div>
+    </div>
 
-<section>
-    <ul>
-        <h1>Chapter V</h1>
-        How to Drive a Volkswagen
-    </ul>
+
+
 </section>
 
 
-<section>
-    <ul>
-        <li>Check your status (oil fluides air) regularily </li>
-        <li>Make sure cron is running</li>
+<section data-background-image="includes/err1.jpg"></section>
+<!--
+<section data-background-image="includes/err2.png"></section>
+<section data-background-image="includes/err3.png"></section>
+<section data-background-image="includes/err4.png"></section>
+-->
+<section data-background-image="includes/gears4.jpg">
+<h3 class="gold">Enable local <br />development settings</h3>
+    <pre><code>settings.local.php</code></pre>
+    <pre><code>sites/development.services.yml</code></pre>
+</section>
+    <section data-background-image="includes/gears4.jpg">
 
-    </ul>
+    <pre><code>$settings['cache']['bins']['render'] = 'cache.backend.null';</code></pre>
+    <pre><code>$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';</code></pre>
+
+
+    <pre><code>$settings['cache']['bins']['page'] = 'cache.backend.null';</code></pre>
+    <pre><code>$config['system.performance']['css']['preprocess'] = FALSE;</code></pre>
+    <pre><code>$config['system.performance']['js']['preprocess'] = FALSE;</code></pre>
+</section>
+
+
+ <section>
+    drush config-import
+</section>
+<section>
+    drush update-database (drush updb)
+</section>
+<section>
+    drush config-import
+</section>
+<section>
+
+        If you have a helpful error message, you are off to the races:
+
+        Google (d.org, stackexchnage, blogs, etc.)
+        Patches (start at the bottom)
+
+
+
+        Google smartly
+        Often
+        disable your theme
+        disable your custom modules
+        disable any suspect contrib module
+        enable dblog
+        investigate syslog
+
+
 </section>
