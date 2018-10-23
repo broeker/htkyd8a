@@ -13,7 +13,30 @@
 <section>
         composer clear-cache
 </section>
-
+<section>
+    * start at the bottom
+    * disable your theme
+    * disable your custom module
+    * be destructive (you can afford to)
+    * do a force git refresh, no matter what
+    * learn how to google
+    * drupal console debug commands
+</section>
+<section>
+    drupal check: check system requirements;
+    drupal site:status: show current Drupal installation status (Versions of Drupal, PHP, MySQL and libraries, updates status, cron last run, database connection etc.);
+    drupal database:table:debug: show all tables of the database;
+    drupal database:table:debug my_table: show columns of my_table table;
+    drupal config:debug: list all configurations;
+    drupal config:debug image.settings: show configuration for image.settings;
+    drupal config:settings:debug: display current key:value from the settings file;
+    drupal container:debug: display all services ID with the matching class name;
+    drupal router:debug: display all route names with the matching paths;
+    drupal router:debug dblog.overview: display route information about dblog overview page;
+    drupal database:log:debug: display current log events;
+    drupal database:log:debug 107: display one log event in details;
+    drupal site:statistics: show some statistics about the website (number of modules enabled/disabled, number of users and comments etc.).
+</section>
 <section>
     It may seem redundant but...but perhaps there are some who would like specific
     direction in this most common of road emergencies.

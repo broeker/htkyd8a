@@ -22,7 +22,18 @@
 </section>
 
 
-<section data-background-image="includes/err1.jpg"></section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/err1.jpg" width="100%" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/err2.png" width="100%" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/err3.png" width="100%" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/err9.png" width="100%" />
+</section>
 <!--
 <section data-background-image="includes/err2.png"></section>
 <section data-background-image="includes/err3.png"></section>
@@ -33,29 +44,89 @@
     <pre><code>settings.local.php</code></pre>
     <pre><code>sites/development.services.yml</code></pre>
 </section>
-    <section data-background-image="includes/gears4.jpg">
 
+
+    <section data-background-image="includes/gears4.jpg">
+<h3 class="gold">Disable caching and aggregration</h3>
     <pre><code>$settings['cache']['bins']['render'] = 'cache.backend.null';</code></pre>
     <pre><code>$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';</code></pre>
-
-
     <pre><code>$settings['cache']['bins']['page'] = 'cache.backend.null';</code></pre>
+   <div style="margin-top: 3em;">
     <pre><code>$config['system.performance']['css']['preprocess'] = FALSE;</code></pre>
     <pre><code>$config['system.performance']['js']['preprocess'] = FALSE;</code></pre>
+   </div>
+    </section>
+<section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Disable Twig cache and enable debugging</h3>
+    <div class="big">
+    <pre><code>sites/development.services.yml</code></pre>
+    <pre><code>
+        parameters:
+          twig.config:
+          debug: true
+          auto_reload: true
+          cache: false
+    </code></pre>
+        </div>
+
 </section>
 
+<section data-background-image="includes/gears4.jpg">
+    <pre><code>
+    # Local development services.
+    #
+    # To activate this feature, follow the instructions at the top of the
+    # 'example.settings.local.php' file, which sits next to this file.
+    parameters:
+        http.response.debug_cacheability_headers: true
+        twig.config:
+            debug: true
+            auto_reload: true
+            cache: false
+    services:
+        cache.backend.null:
+        class: Drupal\Core\Cache\NullBackendFactory
+    </code></pre>
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Show thy errors</h3>
+    <div class="big" width="100%">
+    <pre>
+   <code>
+   $config['system.logging']
+   ['error_level'] = 'verbose';
+   </code></pre>
+    </div>
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/devtool-cache.png" /><br />
+    <img src="includes/devtool-cache2.png" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <div class="big">
+    <pre><code>git pull (or rebase)</code></pre>
+        <pre><code>database sync</code></pre>
+        <pre><code>drush updatedb (drush updb)</code></pre>
+        <pre><code>drush config-import (drush cim)</code></pre>
+        <pre><code>drush cr and devel cr</code></pre>
+    </div>
+</section>
 
- <section>
-    drush config-import
+<section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Time to check the logs</h3>
+    <div class="big">
+    <pre><code>Dblog vs Syslog vs Server logs</code></pre>
+    </div>
 </section>
-<section>
-    drush update-database (drush updb)
-</section>
-<section>
-    drush config-import
-</section>
-<section>
 
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/dblog.png" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/details.png" />
+</section>
+
+<section data-background-image="includes/gears4.jpg">
         If you have a helpful error message, you are off to the races:
 
         Google (d.org, stackexchnage, blogs, etc.)

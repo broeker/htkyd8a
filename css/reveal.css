@@ -31,7 +31,9 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
 .reveal article, .reveal aside, .reveal details, .reveal figcaption, .reveal figure,
 .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
   display: block; }
-
+.big {
+  font-size: 150%!important;
+}
 #col1 {
   float: right ;
   width: 50% ;
@@ -71,14 +73,22 @@ img {
 .rise-200 {
   margin-top: -200px!important;
 }
+.right-300 {
+  margin-left: 100px!important;
+}
 
 .rise-300 {
   margin-top: -300px!important;
 }
-.fall-300 {
-  margin-top: 300px!important;
+.fall-200 {
+  margin-top: 100px!important;
 }
-
+.fall-300 {
+  margin-top: 100px!important;
+}
+.fall-400 {
+  margin-top: 400px!important;
+}
 .right-100 {
   margin-left: 100px!important;
 }
@@ -120,7 +130,7 @@ img {
 }
 
 .half {
-  width: 50%;
+  width: 50%!important;
    }
 
 .three-quarters {
