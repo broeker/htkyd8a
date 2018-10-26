@@ -41,16 +41,16 @@
 -->
 <section data-background-image="includes/gears4.jpg">
 <h3 class="gold">Enable local <br />development settings</h3>
-    <pre><code>settings.local.php</code></pre>
     <pre><code>sites/development.services.yml</code></pre>
+    <pre><code>     -- call from settings.local.php</code></pre>
 </section>
 
 
     <section data-background-image="includes/gears4.jpg">
 <h3 class="gold">Disable caching and aggregration</h3>
     <pre><code>$settings['cache']['bins']['render'] = 'cache.backend.null';</code></pre>
-    <pre><code>$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';</code></pre>
     <pre><code>$settings['cache']['bins']['page'] = 'cache.backend.null';</code></pre>
+    <pre><code>$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';</code></pre>
    <div style="margin-top: 3em;">
     <pre><code>$config['system.performance']['css']['preprocess'] = FALSE;</code></pre>
     <pre><code>$config['system.performance']['js']['preprocess'] = FALSE;</code></pre>
@@ -72,6 +72,7 @@
 </section>
 
 <section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Example file</h3>
     <pre><code>
     # Local development services.
     #
@@ -96,6 +97,16 @@
    $config['system.logging']
    ['error_level'] = 'verbose';
    </code></pre>
+    </div>
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <div>
+        <div id="col1">
+        <img src="includes/with-error.png" />
+        </div>
+        <div id="col2">
+            <img src="includes/without-error.png" />
+        </div>
     </div>
 </section>
 <section data-background-image="includes/gears4.jpg">
