@@ -95,7 +95,7 @@ img {
 .offset {
   padding: .2em 1em .3em 1em !important;
   background-color: #000;
-  opacity: .5;
+  opacity: .6;
   -webkit-border-radius: 32px;
 }
 .center {
@@ -112,20 +112,19 @@ img {
 .blackbar {
   padding: .2em 1em .3em 1em !important;
   background-color: #000;
-  opacity: .9;
+  opacity: .7;
   -webkit-border-radius: 16px;
-  margin-bottom: 1em!important;
   font-size: 90%!important;
+    width: 50%;
 }
 
 .blackbar_sm {
-  padding: .2em 1em .3em 1em !important;
+  padding: .2em .5em .3em .5em !important;
   background-color: #000;
   opacity: .5;
   -webkit-border-radius: 16px;
-  width: 30%;
-  font-size: 60% !important;
-  color: goldenrod;
+  width: 38%;
+  font-size: 55% !important;
   margin-bottom: 1em;
 }
 

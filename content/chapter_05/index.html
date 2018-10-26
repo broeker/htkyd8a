@@ -29,10 +29,10 @@
     <img src="includes/err2.png" width="100%" />
 </section>
 <section data-background-image="includes/gears4.jpg">
-    <img src="includes/err3.png" width="100%" />
+    <img src="includes/err13.png" width="60%" />
 </section>
 <section data-background-image="includes/gears4.jpg">
-    <img src="includes/err9.png" width="100%" />
+    <img src="includes/err6.png" width="60%" />
 </section>
 <!--
 <section data-background-image="includes/err2.png"></section>
@@ -40,55 +40,59 @@
 <section data-background-image="includes/err4.png"></section>
 -->
 <section data-background-image="includes/gears4.jpg">
-<h3 class="gold">Enable local <br />development settings</h3>
-    <pre><code>sites/development.services.yml</code></pre>
-    <pre><code>     -- call from settings.local.php</code></pre>
-</section>
-
-
-    <section data-background-image="includes/gears4.jpg">
-<h3 class="gold">Disable caching and aggregration</h3>
-    <pre><code>$settings['cache']['bins']['render'] = 'cache.backend.null';</code></pre>
-    <pre><code>$settings['cache']['bins']['page'] = 'cache.backend.null';</code></pre>
-    <pre><code>$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';</code></pre>
-   <div style="margin-top: 3em;">
-    <pre><code>$config['system.performance']['css']['preprocess'] = FALSE;</code></pre>
-    <pre><code>$config['system.performance']['js']['preprocess'] = FALSE;</code></pre>
-   </div>
-    </section>
-<section data-background-image="includes/gears4.jpg">
-    <h3 class="gold">Disable Twig cache and enable debugging</h3>
+    <h3 class="gold">Step One: Triage</h3>
     <div class="big">
-    <pre><code>sites/development.services.yml</code></pre>
-    <pre><code>
-        parameters:
-          twig.config:
-          debug: true
-          auto_reload: true
-          cache: false
-    </code></pre>
-        </div>
-
+    <pre><code>Double check for a flat tire</code></pre>
+        <pre><code>Get your logs (dblog, syslog, server logs)</code></pre>
+        <pre><code>(and/or skip straight to Step Two: Go local!)</code></pre>
+    </div>
 </section>
 
 <section data-background-image="includes/gears4.jpg">
-    <h3 class="gold">Example file</h3>
-    <pre><code>
-    # Local development services.
-    #
-    # To activate this feature, follow the instructions at the top of the
-    # 'example.settings.local.php' file, which sits next to this file.
-    parameters:
-        http.response.debug_cacheability_headers: true
-        twig.config:
-            debug: true
-            auto_reload: true
-            cache: false
-    services:
-        cache.backend.null:
-        class: Drupal\Core\Cache\NullBackendFactory
-    </code></pre>
+    <h3 span class="gold">Database logging (Watchdog)</h3>
+    <img src="includes/dblog.png" />
 </section>
+<section data-background-image="includes/gears4.jpg">
+    <img src="includes/details.png" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <pre><code>drush @yoursite.live en dblog -y</code></pre>
+    <pre><code>drush @yoursite.live watchdog-tail --show</code></pre>
+    <pre><code>drush @yoursite.live pmu dblog -y</code></pre>
+</section>
+
+<section data-background-image="includes/gears4.jpg">
+    <h3 span class="gold">Syslog (system utility)</h3>
+    <img src="includes/syslog.png" width=""60% />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <h3 span class="gold">Logs HTTP module</h3>
+    <img src="includes/logsHTTP.png" width="50%" />
+</section>
+<section data-background-image="includes/gears4.jpg">
+    <h3 span class="gold">error.log (and apache.log)</h3>
+    <img src="includes/serverlogs.png" width=""100% />
+</section>
+
+<section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Step Two: Go local</h3>
+    <div class="big">
+    <pre><code>hopefully in an instant</code></pre>
+        <pre><code>zero friction</code></pre>
+    </div>
+</section>
+
+<section data-background-image="includes/gears4.jpg">
+    <h3 span class="gold">Get in a 1:1 state</h3>
+    <div class="big">
+    <pre><code>git pull (or rebase)</code></pre>
+        <pre><code>database sync</code></pre>
+        <pre><code>drush updatedb (drush updb)</code></pre>
+        <pre><code>drush config-import (drush cim)</code></pre>
+        <pre><code>drush cr</code></pre>
+    </div>
+</section>
+
 <section data-background-image="includes/gears4.jpg">
     <h3 class="gold">Show thy errors</h3>
     <div class="big" width="100%">
@@ -110,48 +114,70 @@
     </div>
 </section>
 <section data-background-image="includes/gears4.jpg">
+<h3 class="gold">Enable local <br />development settings</h3>
+    <pre><code>sites/development.services.yml</code></pre>
+    <pre><code>     -- call from settings.local.php</code></pre>
+</section>
+
+
+    <section data-background-image="includes/gears4.jpg">
+<h3 class="gold">Disable caching and aggregration</h3>
+        <small>Pre bootstrap:</small>
+    <pre><code>$settings['cache']['bins']['render'] = 'cache.backend.null';</code></pre>
+    <pre><code>$settings['cache']['bins']['page'] = 'cache.backend.null';</code></pre>
+    <pre><code>$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';</code></pre>
+        <div style="margin-top: 1em;">
+            <small>System wide config:</small>
+            <pre><code>$config['system.performance']['css']['preprocess'] = FALSE;</code></pre>
+    <pre><code>$config['system.performance']['js']['preprocess'] = FALSE;</code></pre>
+   </div>
+    </section>
+<section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Disable Twig cache and enable debugging</h3>
+    <div class="big">
+    <pre><code>sites/development.services.yml</code></pre>
+    <pre><code>
+        parameters:
+          twig.config:
+          debug: true
+          auto_reload: true
+          cache: false
+    </code></pre>
+        </div>
+
+</section>
+<!--
+<section data-background-image="includes/gears4.jpg">
+    <h3 class="gold">Example file</h3>
+    <pre><code>
+    # Local development services.
+    #
+    # To activate this feature, follow the instructions at the top of the
+    # 'example.settings.local.php' file, which sits next to this file.
+    parameters:
+        http.response.debug_cacheability_headers: true
+        twig.config:
+            debug: true
+            auto_reload: true
+            cache: false
+    services:
+        cache.backend.null:
+        class: Drupal\Core\Cache\NullBackendFactory
+    </code></pre>
+</section>
+-->
+
+<section data-background-image="includes/gears4.jpg">
     <img src="includes/devtool-cache.png" /><br />
     <img src="includes/devtool-cache2.png" />
 </section>
-<section data-background-image="includes/gears4.jpg">
-    <div class="big">
-    <pre><code>git pull (or rebase)</code></pre>
-        <pre><code>database sync</code></pre>
-        <pre><code>drush updatedb (drush updb)</code></pre>
-        <pre><code>drush config-import (drush cim)</code></pre>
-        <pre><code>drush cr and devel cr</code></pre>
-    </div>
-</section>
+
+
 
 <section data-background-image="includes/gears4.jpg">
-    <h3 class="gold">Time to check the logs</h3>
-    <div class="big">
-    <pre><code>Dblog vs Syslog vs Server logs</code></pre>
-    </div>
+    <h3 span class="gold">Use the force</h3>
+    You know now everything possible about your situation, and it is your job to piece it all together.
 </section>
 
-<section data-background-image="includes/gears4.jpg">
-    <img src="includes/dblog.png" />
-</section>
-<section data-background-image="includes/gears4.jpg">
-    <img src="includes/details.png" />
-</section>
-
-<section data-background-image="includes/gears4.jpg">
-        If you have a helpful error message, you are off to the races:
-
-        Google (d.org, stackexchnage, blogs, etc.)
-        Patches (start at the bottom)
 
 
-
-        Google smartly
-        Often
-        disable your theme
-        disable your custom modules
-        disable any suspect contrib module
-        enable dblog
-        investigate syslog
-
-
-</section>
